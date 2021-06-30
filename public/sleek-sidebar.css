@@ -1,0 +1,45 @@
+@media (max-width: 760px) {
+  .overlay {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    position: absolute;
+  }
+
+  .sidebar {
+    margin-left: -100%;
+  }
+
+  @keyframes animateSidebar {
+    0% {
+      margin-left: -100%;
+    }
+    100% {
+      margin-left: 0;
+    }
+  }
+
+  .reveal-sidebar {
+    display: block !important;
+    transition: all 2s ease-in-out;
+    animation: animateSidebar 0.5s ease-in-out;
+    margin-left: 0;
+  }
+
+  @keyframes animateHideSidebar {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -100%;
+    }
+  }
+
+  .hide-sidebar {
+    display: block !important;
+    transition: all 2s ease-in-out;
+    animation: animateHideSidebar 0.5s ease-in-out;
+    margin-left: -100%;
+  }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Components</title>
+    <link rel="stylesheet" href="./public/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./public/sleek-sidebar.css">
+
+  </head>
+  <body>
+    
+
+
+    <aside
+      class="
+        sidebar
+        bg-white
+        z-10
+        shadow-xl
+        md:block
+        w-60
+        fixed
+        bg-gray-50
+        h-full
+        overflow-y-scroll
+      "
+    >
+      <div class="bg-blue-600 p-3">
+        <img
+          src="./images/official-logo.5f63f7cb.png"
+          class="w-32 object-fit"
+          alt=""
+        />
+      </div>
+
+      <div class="flex flex-col px-6">
+        <a href="" class="p-2 text-sm"
+          ><i class="mr-1 w-4 object-contain fa fa-home"></i> Home</a
+        >
+        <a href="" class="p-2 text-sm flex items-center justify-between"
+          ><span
+            ><i class="mr-1 w-4 object-contain fa fa-bell"></i> Orders</span
+          >
+          <span class="bg-yellow-400 px-2 text-center rounded text-xs"
+            >13</span
+          ></a
+        >
+        <a href="" class="p-2 text-sm flex items-center justify-between">
+          <span
+            ><i class="mr-1 w-4 object-contain fa fa-users"></i> Customers</span
+          >
+          <span class="bg-yellow-400 px-2 text-center rounded text-xs">27</span>
+        </a>
+        <a href="" class="p-2 text-sm flex items-center justify-between">
+          <span
+            ><i class="mr-1 w-4 object-contain fa fa-mobile"></i> Products</span
+          >
+          <span class="bg-yellow-400 px-2 text-center rounded text-xs"
+            >312</span
+          >
+        </a>
+        <a href="" class="p-2 text-sm"
+          ><i class="mr-1 w-4 object-contain fa fa-bullhorn"></i> Blog</a
+        >
+        <a href="" class="p-2 text-sm"
+          ><i class="mr-1 w-4 object-contain fa fa-user-cog"></i> Settings</a
+        >
+
+        <a href="" class="p-2 text-sm absolute bottom-0 my-2"
+          ><i class="mr-1 w-4 object-contain fa fa-envelope"></i> Pluvastore Help</a
+        >
+      </div>
+    </aside>
+
+    <div class="overlay hidden" id="mainOverlay"></div>
+
+    <main class="ml-0 md:ml-60 relative">
+      <nav
+        class="
+          h-12
+          w-full
+          bg-blue-600
+          flex
+          items-center
+          justify-between
+          px-6
+          text-white
+        "
+      >
+        <div class="left-section">
+          <a href="#" class="md:hidden toggler">
+            <i class="fa fa-bars"></i>
+          </a>
+
+          <form class="hidden md:block">
+            <input
+              type="search"
+              class="text-sm w-72 p-1 text-black rounded"
+              placeholder="What are you looking for?"
+            />
+            <button class="p-1 font-bold text-sm hover:text-yellow-500">
+              Search
+            </button>
+          </form>
+        </div>
+
+        <div class="right-section text-sm">
+          <a href="#" class="md:hidden px-2">
+            <i class="fa fa-search"></i> Search
+          </a>
+
+          <a href="" class="px-1"> <i class="fa fa-user"></i> Desse </a>
+          <a href="" class="px-1"><i class="fa fa-bell"></i> Alerts</a>
+          <a href="" class="px-1">Sign out </a>
+        </div>
+      </nav>
+
+      <div class="max-w-3xl mx-auto">
+        <article class="text-center p-3 text-sm">
+          <h1 class="text-xl">Hi West!</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+          repellendus, suscipit perferendis quis corrupti sit facere aspernatur
+          sint laboriosam rem, corporis eius reiciendis reprehenderit aut vitae
+          nisi illo dolores voluptate!
+        </p>
+
+        <button onclick="modal()" class="my-4 py-2 px-3 border rounded font-bold bg-green-600 text-white hover:bg-green-700">Open greeting!</button>
+        </article>
+      </div>
+
+      <!-- Modal -->
+      <style>
+        .modal {
+          transform: scale(0);
+          transition: all 0.4s ease-in-out;
+        }
+        .reveal-modal {
+          transform: scale(1);
+        }
+      </style>
+      <section class="modal fixed flex top-0 bottom-0 right-0 left-0 md:left-60 
+      ">
+        <div onclick="hideModal()" class="bg-white absolute h-screen w-screen"></div>
+
+        <div class="m-auto bg-white z-10 p-4 max-w-xl mx-3 md:mx-auto shadow-xl max-h-full overflow-y-scroll">
+          <div class="text-center text-sm">
+            <h1 class="text-xl">Good morning, West!</h1>
+            <hr class="my-4">
+            <p>We just thought to greet you. Hope you are having a nice time here?</p>
+            <p>If you encountered any issue or difficulty, please know that our support staff is right here with you, 24/7.</p>
+          </div>
+
+          <div class="my-4 flex justify-center">
+            <a href="mailto:help@pluvastore.com" class="py-2 px-3 border m-1 rounded bg-red-500 hover:bg-red-600 text-white text-sm font-bold text-center">Get help</a>
+            
+            <button onclick="hideModal()" class="py-2 px-3 border m-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold text-center">Continue to dashboard</button>
+          </div>
+        </div>
+      </section>
+
+    <!-- End of Modal -->
+    </main>
+
+    <script src="./public/main.js"></script>
+    <script src="./public/sleek-sidebar.js"></script>
+    <script>
+      sleekSidebar();
+    </script>
+  </body>
+</html>
